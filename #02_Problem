@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+// دالة للتحقق مما إذا كانت السنة كبيسة
+bool IsLeapYear(short Year)
+{
+    // إذا كانت السنة تقبل القسمة على 400 → كبيسة
+    if (Year % 400 == 0)
+    {
+        return true;
+    }
+    // إذا كانت تقبل القسمة على 100 فقط → ليست كبيسة
+    else if (Year % 100 == 0)
+    {
+        return false;
+    }
+    // إذا كانت تقبل القسمة على 4 فقط → كبيسة
+    else if (Year % 4 == 0)
+    {
+        return true;
+    }
+    // باقي الحالات → ليست كبيسة
+    else
+    {
+        return false;
+    }
+}
+
+// دالة لقراءة السنة من المستخدم
+short ReadYear()
+{
+    short Year;
+    cout << "\nPlease enter a year to check: ";
+    cin >> Year;
+    return Year;
+}
+
+int main()
+{
+    short Year = ReadYear();
+
+    if (IsLeapYear(Year))
+    {
+        cout << "\nYes, Year [" << Year << "] is a leap year.\n";
+    }
+    else
+    {
+        cout << "\nNo, Year [" << Year << "] is NOT a leap year.\n";
+    }
+
+    system("pause>0"); // لجعل النافذة تبقى مفتوحة (في بيئة Windows فقط)
+    return 0;
+}
