@@ -1,0 +1,35 @@
+// ProgrammingAdvices.com© Copyright 2022
+// Problem # 3/4 Solution Using C++
+
+#include <iostream>
+using namespace std;
+
+// دالة للتحقق مما إذا كانت السنة كبيسة
+bool isLeapYear(short Year)
+{
+    // السنة كبيسة إذا كانت تقبل القسمة على 4 و ليست على 100، أو تقبل القسمة على 400
+    return (Year % 4 == 0 && Year % 100 != 0) || (Year % 400 == 0);
+}
+
+// دالة لقراءة السنة من المستخدم
+short ReadYear()
+{
+    short Year;
+    cout << "\nPlease enter a year to check? ";
+    cin >> Year;
+    return Year;
+}
+
+// البرنامج الرئيسي
+int main()
+{
+    short Year = ReadYear();
+
+    if (isLeapYear(Year))
+        cout << "\nYes, Year [" << Year << "] is a leap year.\n";
+    else
+        cout << "\nNo, Year [" << Year << "] is NOT a leap year.\n";
+
+    system("pause>0"); // لجعل نافذة الإخراج تبقى مفتوحة (في بيئة Windows)
+    return 0;
+}
