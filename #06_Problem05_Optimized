@@ -1,0 +1,70 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+short ReadYear()
+{
+    short Year = 0;
+    cout << "\nPlease enter a year to check? ";
+    cin >> Year;
+    return Year;
+}
+
+short ReadMonth()
+{
+    short Month = 0;
+    cout << "\nPlease enter a month to check? ";
+    cin >> Month;
+    return Month;
+}
+
+bool isLeapYear(short Year)
+{
+    return (Year % 4 == 0 && Year % 100 != 0) || (Year % 400 == 0);
+}
+
+short NumberOfDaysInMonth(short Month, short Year)
+{
+
+    if (Month < 1 || Month > 12)
+        return 0;
+
+    short NumberOfDays[13] = { 0, 31,28,31,30,31,30,31,31,30,31,30,31 };
+
+    return (Month == 2) ? (isLeapYear(Year) ? 29 : 28) : NumberOfDays[Month];
+
+}
+
+
+int NumberOfHoursInMonth(short Month, short Year)
+{
+
+    return NumberOfDaysInMonth(Month, Year) * 24;
+
+}
+
+int NumberOfMinutesInMonth(short Month, short Year)
+{
+
+    return NumberOfHoursInMonth(Month, Year) * 60;
+}
+
+int NumberOfSecondsInMonth(short Month, short Year)
+{
+    return NumberOfMinutesInMonth(Month, Year) * 60;
+}
+
+int main()
+{
+
+    short Year = ReadYear();
+    short Month = ReadMonth();
+
+    cout << "\nNumber of days       : " << Month << "/" << Year << " is " << NumberOfDaysInMonth(Month, Year) << endl;
+    cout << "Number of hours in   : " << Month << "/" << Year << " is " << NumberOfHoursInMonth(Month, Year) << endl;
+    cout << "Number of minutes in : " << Month << "/" << Year << " is " << NumberOfMinutesInMonth(Month, Year) << endl;
+    cout << "Number of seconds in : " << Month << "/" << Year << " is " << NumberOfSecondsInMonth(Month, Year) << endl;
+
+
+    return 0;
+}
