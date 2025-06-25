@@ -48,6 +48,7 @@ int main()
     cout << "Number of hours in the year: " << Year << " is " << NumberOfHoursInYear(Year) << endl;
     cout << "Number of minutes in the year: " << Year << " is " << NumberOfMinutesInYear(Year) << endl;
     cout << "Number of seconds in the year: " << Year << " is " << NumberOfSecondsInYear(Year) << endl;
+
     system("pause>0");
 
     return 0;
