@@ -37,7 +37,7 @@ struct StDate
     short Year, Month, Day;
 };
 
-StDate NumberOfDaysToDate(short DayOrderInYear, short Year)
+StDate GetDateFromDayOrderInYear(short DayOrderInYear, short Year)
 {
     StDate Date;
     short RemainingDays = DayOrderInYear;
