@@ -112,7 +112,7 @@ int main()
     short Month = ReadMonth();
     short Year = ReadYear();
     short DayOrderInYear = CountNumberOfDaysFromBeginningOfYear(Day, Month, Year);
-    StDate Date = NumberOfDaysToDate(DayOrderInYear, Month, Year);
+    StDate Date = GetDateFromDayOrderInYear(DayOrderInYear, Month, Year);
 
     cout << "\nNumber of days from the beginning of year is " << CountNumberOfDaysFromBeginningOfYear(Day, Month, Year) << endl;
     cout << "Date for [" << DayOrderInYear << "] is: ";
