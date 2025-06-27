@@ -47,16 +47,6 @@ short ReadYear()
     return Year;
 }
 
-short ReadDaysToAdd()
-{
-    short Day;
-
-    cout << "\nPlease enter a number of days to add? ";
-    cin >> Day;
-
-    return Day;
-}
-
 StDate ReadFullDate()
 {
     StDate Date;
