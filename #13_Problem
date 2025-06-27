@@ -58,16 +58,6 @@ StDate ReadFullDate()
     return Date;
 }
 
-short ReadDaysToAdd()
-{
-    short Day;
-
-    cout << "\nPlease enter a number of days to add? ";
-    cin >> Day;
-
-    return Day;
-}
-
 bool IsDate1BeforeDate2(StDate Date1, StDate Date2)
 {
     return (Date1.Year < Date2.Year) ? true : ((Date1.Year == Date2.Year) ? (Date1.Month < Date2.Month ? true : (Date1.Month == Date2.Month ? Date1.Day < Date2.Day : false)) : false);
