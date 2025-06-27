@@ -76,9 +76,9 @@ bool isDay1EqualsDay2(StDate Date1, StDate Date2)
 
 int main() 
 {
-    cout << "Read Day 1 : " << endl;
+    cout << "Read Date 1 : " << endl;
     StDate Date1 = ReadFullDate();
-    cout << "\nRead Day 2 : " << endl;
+    cout << "\nRead Date 2 : " << endl;
     StDate Date2 = ReadFullDate();
     
     if (isDay1EqualsDay2(Date1, Date2))
