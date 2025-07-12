@@ -1,0 +1,80 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+struct StDate
+{
+    short Day;
+    short Month;
+    short Year;
+};
+
+string ReadFullDate() 
+{
+    string FullDate;
+    cout << "Please enter date dd/mm/yyyy? ";
+    cin >> FullDate;
+    return FullDate;
+}
+
+vector <string> SplitString(string Text, string Delim)
+{
+    string Word = "";
+    short Position = 0;
+    vector <string> vString;
+
+    while ((Position = Text.find(Delim)) != std::string::npos)
+    {
+        Word = Text.substr(0, Position);
+        if (Word != "")
+        {
+            vString.push_back(Word);
+        }
+        Text.erase(0, Position + Delim.length());
+    }
+
+    if (Text != "")
+    {
+        vString.push_back(Text);
+    }
+
+    return vString;
+
+}
+
+StDate StringToDate(string DateString)
+{
+    StDate Date;
+    vector<string> vDate;
+
+    vDate = SplitString(DateString, "/");
+    Date.Day = stoi(vDate[0]);
+    Date.Month = stoi(vDate[1]);
+    Date.Year = stoi(vDate[2]);
+    
+    return Date;
+}
+
+string DateToString(StDate Date)
+{
+    return to_string(Date.Day) + "/" + to_string(Date.Month) + "/" + to_string(Date.Year);
+}
+
+int main() 
+{
+
+    string DateString = ReadFullDate();
+    StDate Date = StringToDate(DateString);
+
+    cout << "\nDay:" << Date.Day << endl;
+    cout << "Month:" << Date.Month << endl;
+    cout << "Year:" << Date.Year << endl;
+
+    cout << "You entered: ";
+    cout << DateToString(Date);
+
+    system("pause>0");
+    return 0;
+}
+
